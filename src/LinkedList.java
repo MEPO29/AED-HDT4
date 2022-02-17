@@ -10,10 +10,10 @@ public class LinkedList<E> extends AbstractList<E> {
 			throw new NullPointerException();
 		}
 		Node<E> current = head;
-		while (current.getNext() != null) {
-			current = current.getNext();
+		while (current.next != null) {
+			current = current.next;
 		}
-		current.setNext(new Node<E>(item));
+		current.next = new Node<E>(item);
 		this.size++;
 	}
 
@@ -25,12 +25,12 @@ public class LinkedList<E> extends AbstractList<E> {
 			throw new ArrayIndexOutOfBoundsException();
 		}
 		for (int j=0; j<i; j++) {
-			current = current.getNext();
+			current = current.next;
 		}
-		Node<E> temp = current.getNext();
-		current.setNext(temp.getNext());
+		Node<E> temp = current.next;
+		current.next = temp.next;
 		size--;
-		return temp.getData();
+		return temp.data;
 	}
 
 	@Override
@@ -41,9 +41,9 @@ public class LinkedList<E> extends AbstractList<E> {
 		}
 		Node<E> current = head;
 		for (int j=0; j<i; j++) {
-			current = current.getNext();
+			current = current.next;
 		}
-		return current.getNext().getData();
+		return current.next.data;
 	}
 
 	@Override
@@ -63,7 +63,7 @@ public class LinkedList<E> extends AbstractList<E> {
 
 class Node<E> {
 	
-	Node<E> next;
+	Node<E> next = null;
 	E data;
 	
 	Node(E item){
@@ -74,16 +74,5 @@ class Node<E> {
 		this(item);
 		next = next_;
 	}
-	
-	public Node<E> getNext() {
-		return next;
-	}
-	
-	public E getData() {
-		return data;
-	}
-	
-	public void setNext(Node<E> next_) {
-		next = next_;
-	}
+
 }

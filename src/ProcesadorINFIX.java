@@ -22,15 +22,10 @@ public class ProcesadorINFIX {
 			} else if (Character.toString(c).equals(")")) {
 				while (!stack.empty() && !stack.peek().toString().equals("(")) {
 					postfix += Character.toString(stack.pop()) + " ";
-				}
-				// stack.pop();
+				}				
 			} else {
 				while (!stack.empty() && precedence(c) <= precedence(stack.peek())) {
-					if (Character.toString(stack.peek()).equals("(") || Character.toString(stack.peek()).equals(")") || Character.toString(stack.peek()).equals("#")) {
-						stack.pop();
-					} else {
-						postfix += stack.pop() + " ";
-					}
+					postfix += stack.pop() + " ";
 				}
 				stack.add(c);
 			}
@@ -50,12 +45,12 @@ public class ProcesadorINFIX {
 	private static int precedence(char c) {
 
 		if (Character.toString(c).equals("+") || Character.toString(c).equals("-")) {
-			return 0;
-		}
-		if (Character.toString(c).equals("*") || Character.toString(c).equals("/")) {
 			return 1;
 		}
-		return 2;
+		if (Character.toString(c).equals("*") || Character.toString(c).equals("/")) {
+			return 2;
+		}
+		return 0;
 		
 	}
 }
