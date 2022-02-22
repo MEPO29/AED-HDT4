@@ -1,3 +1,14 @@
+/**
+ * 
+ * @author Manuel Martínez
+ * @author Mario Puente
+ * @author Luis Montenegro
+ *
+ * Calculadora
+ * Evalua una expresión postfix utilizando un Stack.
+ * Utiliza Factory para generar el Stack necesario.
+ * Implementa diseño Singleton
+ */
 
 public class Calculadora {
 
@@ -20,6 +31,7 @@ public class Calculadora {
 		this("ArrayList");
 		flagSingleton = true;
 	}
+	
 	/**
 	 * Evalua la operación tipo POSTFIX
 	 */

@@ -1,3 +1,13 @@
+/**
+ * 
+ * @author Manuel Martínez
+ * @author Mario Puente
+ * @author Luis Montenegro
+ *
+ * CalculadoraTest.
+ * Prueba Unitaria de Calculadora.
+ * Se realiza una prueba por cada Stack
+ */
 
 import static org.junit.jupiter.api.Assertions.*;
 

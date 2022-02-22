@@ -1,3 +1,13 @@
+/**
+ * 
+ * @author Manuel Martínez
+ * @author Mario Puente
+ * @author Luis Montenegro
+ *
+ * Controlador.
+ * Controla las clases y contiene el método main
+ */
+
 import java.util.ArrayList;
 
 public class Controlador {
@@ -48,6 +58,8 @@ public class Controlador {
 			Double resultado = calc.calculate(postfix);
 			vista.mostrarResultado(infix, postfix, resultado);
 		}
+		
+		calc.finalize();
 	}
 
 }

@@ -1,18 +1,34 @@
+/**
+ * 
+ * @author Manuel Martínez
+ * @author Mario Puente
+ * @author Luis Montenegro
+ *
+ * DoubleLList<E>
+ * Implementación de lista doblemente encadenada para List<E>
+ */
 
 public class DoubleLList<E> extends AbstractList<E> {
 	
 	DNode<E> head;
 	DNode<E> tail;
 	
+	/**
+	 * Inicializa cola y cabeza
+	 */
 	public DoubleLList(){
+		// post: arreglo vacio
 		head = new DNode<E>(null);
 		tail = new DNode<E>(null, head);
 		head.next = tail;
 	}
 
+	/**
+	 * Añade un elemento al final de la lista
+	 */
 	@Override
 	public void add(E item) {
-		// TODO Auto-generated method stub
+		// post: añade elemento al final del arreglo
 		if (item == null) {
 			throw new NullPointerException();
 		}
@@ -24,9 +40,13 @@ public class DoubleLList<E> extends AbstractList<E> {
 		
 	}
 
+	/**
+	 * Elemina el i-esimo elemento del arreglo
+	 */
 	@Override
 	public E remove(int i) {
-		// TODO Auto-generated method stub
+		// pre: el índice no se encuentra fuera del rango válido
+		// post: elimina el nodo del arreglo
 		
 		if (i >= size() || i <0) {
 			throw new ArrayIndexOutOfBoundsException();
@@ -47,9 +67,13 @@ public class DoubleLList<E> extends AbstractList<E> {
 		return data;
 	}
 
+	/**
+	 * Obtiene el i-esimo elemento del arreglo
+	 */
 	@Override
 	public E get(int i) {
-		// TODO Auto-generated method stub
+		// pre: el índice no se encuentra fuera del rango válido
+		// post: el índice no se encuentra
 		if (i >= size() || i <0) {
 			throw new ArrayIndexOutOfBoundsException();
 		}
@@ -60,8 +84,13 @@ public class DoubleLList<E> extends AbstractList<E> {
 		return current.next.data;
 	}
 	
+	/**
+	 * Elimina el último elemento de la list
+	 */
 	@Override
 	public E removeLast() {
+		// pre: no está vacia
+		// post: elimina el último nodo de la lista
 		if (size() == 0) {
 			throw new NullPointerException();
 		}
@@ -73,8 +102,13 @@ public class DoubleLList<E> extends AbstractList<E> {
 		
 	}
 	
+	/**
+	 * Obtienen el último elemento de la lista
+	 */
 	@Override 
 	public E peek() {
+		// pre: no está vacia
+		// post: obtiene el último elemento de la lista
 		if (size() == 0) {
 			throw new NullPointerException();
 		}
@@ -85,6 +119,11 @@ public class DoubleLList<E> extends AbstractList<E> {
 
 }
 
+/**
+ * 
+ * DNode<E>
+ * Nodo doblemente encadenado 
+ */
 class DNode<E> {
 	
 	DNode<E> prev;

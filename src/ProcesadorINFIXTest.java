@@ -1,3 +1,14 @@
+/**
+ * 
+ * @author Manuel Martínez
+ * @author Mario Puente
+ * @author Luis Montenegro
+ *
+ * ProcesadorINFIXTest
+ * Pruebas Unitarias ProcesadorINFIX
+ * Se realiza una prueba con cada Stack
+ */
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;

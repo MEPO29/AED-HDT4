@@ -1,4 +1,12 @@
-
+/**
+ * 
+ * @author Manuel Martínez
+ * @author Mario Puente
+ * @author Luis Montenegro
+ *
+ * Archivos
+ * Clase para la lectura de archivo
+ */
 
 import java.io.BufferedReader;
 import java.io.FileReader;

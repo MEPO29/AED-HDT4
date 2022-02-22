@@ -1,10 +1,30 @@
-
+/**
+ * 
+ * @author Manuel Martínez
+ * @author Mario Puente
+ * @author Luis Montenegro
+ *
+ * ProcesadorINFIX
+ * Traduce operaciones INFIX a POSTFIX.
+ * Utiliza Factory para Stack
+ */
 public class ProcesadorINFIX {
 	
+	/**
+	 * Procesa INFIX a POSTFIX
+	 * @param operation
+	 * @return POSTFIX
+	 */
 	public static String procesar(String operation) {
 		return procesar(operation, "DoubleLList");
 	}
 
+	/**
+	 * Procesa INFIX a POSTFIX
+	 * @param operation
+	 * @param tipo de Stack
+	 * @return POSTFIX
+	 */
 	public static String procesar(String operation, String tipo) {
 		String postfix = "";
 		FactoryStack<Character> fact = new FactoryStack<Character>();
@@ -42,6 +62,11 @@ public class ProcesadorINFIX {
 		return postfix;
 	}
 	
+	/**
+	 * Indica precedencia de operadores
+	 * @param c operador
+	 * @return precedencia
+	 */
 	private static int precedence(char c) {
 
 		if (Character.toString(c).equals("+") || Character.toString(c).equals("-")) {

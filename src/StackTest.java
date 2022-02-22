@@ -1,3 +1,14 @@
+/**
+ * 
+ * @author Manuel Martínez
+ * @author Mario Puente
+ * @author Luis Montenegro
+ *
+ * StackTest
+ * Pruebas Unitarias Stack
+ * Se realiza una prueba por implementación
+ */
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;

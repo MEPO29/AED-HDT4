@@ -1,11 +1,28 @@
+/**
+ * 
+ * @author Manuel Martínez
+ * @author Mario Puente
+ * @author Luis Montenegro
+ *
+ * LinkedList<E>
+ * Implementación de lista encadenada para List<E>
+ */
 
 public class LinkedList<E> extends AbstractList<E> {
 
-	Node<E> head = new Node<E>(null);
+	Node<E> head;
+	LinkedList(){
+		// post: lista vacia
+		 head = new Node<E>(null);
+	}
 	
+	/**
+	 * Añade un elemento al final de la lista
+	 */
 	@Override
 	public void add(E item) {
-		// TODO Auto-generated method stub
+		// pre: elemento no es null
+		// post: añade el elemento al final de la lista
 		if (item == null) {
 			throw new NullPointerException();
 		}
@@ -17,9 +34,13 @@ public class LinkedList<E> extends AbstractList<E> {
 		this.size++;
 	}
 
+	/**
+	 * Elimina el i-esimo elemento del arreglo
+	 */
 	@Override
 	public E remove(int i) {
-		// TODO Auto-generated method stub
+		// pre: índice se encuetra dentro del rango
+		// post: se elimina el i-esimo nodo
 		Node<E> current = head;
 		if (i >= size() || i <0) {
 			throw new ArrayIndexOutOfBoundsException();
@@ -33,9 +54,13 @@ public class LinkedList<E> extends AbstractList<E> {
 		return temp.data;
 	}
 
+	/**
+	 * Obtiene el i-esimo elemento del arreglo
+	 */
 	@Override
 	public E get(int i) {
-		// TODO Auto-generated method stub
+		// pre: índice se encuentra dentro del rango
+		// post: se obtiene el i-esimo nodo
 		if (i >= size() || i <0) {
 			throw new ArrayIndexOutOfBoundsException();
 		}
@@ -46,21 +71,35 @@ public class LinkedList<E> extends AbstractList<E> {
 		return current.next.data;
 	}
 
+	/**
+	 * Elimina el último elemento de la lista
+	 */
 	@Override
 	public E removeLast() {
-		// TODO Auto-generated method stub
+		// pre: no está vacia
+		// post: se elimina el último nodo
 		return remove(size()-1);
 	}
 
+	/**
+	 * Obtiene el úlitmo elemento de la lista
+	 */
 	@Override
 	public E peek() {
-		// TODO Auto-generated method stub
+		// pre: no está vacia
+		// post: se elimina el último nodo
 		return get(size()-1);
 	}
 
 
 }
 
+/**
+ * 
+ *
+ * Node<E>
+ * Nodo simplemente encadenado
+ */
 class Node<E> {
 	
 	Node<E> next = null;
